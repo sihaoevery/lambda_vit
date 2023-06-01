@@ -117,9 +117,8 @@ class Attention(nn.Module):
         self.attend = nn.Softmax(dim = -1)
         self.dropout = nn.Dropout(dropout)
 
-        self.to_qkv = nn.Linear(dim, inner_dim * 3, bias = False)
+        self.to_qkv = nn.Linear(dim, inner_dim * 3, bias = False) # no use here
         self.to_q = nn.Linear(dim, inner_dim , bias = False)
-        # self.to_k = nn.Identity()
         self.to_k = nn.Linear(dim, inner_dim , bias = False)
         self.to_v = nn.Linear(dim, inner_dim, bias = False)
 
@@ -134,22 +133,13 @@ class Attention(nn.Module):
         q = self.to_q(x)
         k = self.to_k(x)
         v = self.to_v(x)
-        q, k, v, linear_k = map(lambda t: rearrange(t, 'b n (h d) -> b h n d', h = self.heads), [q,k,v,x])
+        q, k, v  = map(lambda t: rearrange(t, 'b n (h d) -> b h n d', h = self.heads), [q,k,v])
 
         dots = torch.matmul(q, k.transpose(-1, -2)) * self.scale
         attn = self.attend(dots)
         attn = self.dropout(attn)
         out = torch.matmul(attn, v)
 
-        linear_dots = torch.matmul(q, linear_k.transpose(-1, -2)) * self.scale
-        linear_attn = linear_dots
-        linear_attn = self.dropout(linear_attn)
-        linear_out = torch.matmul(linear_attn, v)
-
-        magic_lambda = 0.5* (1+math.cos(math.pi*self.cur_epoch**2/99**2))
-        print(magic_lambda)
-
-        out = magic_lambda*out+(1-magic_lambda)*linear_out
         out = rearrange(out, 'b h n d -> b n (h d)')
         return self.to_out(out)
 class Transformer(nn.Module):
