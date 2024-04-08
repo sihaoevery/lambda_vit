@@ -19,15 +19,6 @@ Note that we use torch==1.7.1 for training. To incorparate with [ToMe](https://g
 
 ## Performance
 We provide some checkpoints for reference. We found that the same code and checkpoint would produce different inference results using different pytorch versions. We still cannot figure out and welcome discussions.
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
 <table class="tg">
 <thead>
   <tr>
@@ -90,17 +81,6 @@ We provide some checkpoints for reference. We found that the same code and check
 </table>
 
 We deploy the [ToMe](https://github.com/facebookresearch/ToMe) over the normal blocks (indexed by 0, 1, 2, ...). Typically, we use this technique on the normal block started by index 1 and its subsequent normal blocks. The model is evaluated with torch==1.12.1 .
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-baqh{text-align:center;vertical-align:top}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
 <table class="tg">
 <thead>
   <tr>
