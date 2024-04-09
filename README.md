@@ -183,7 +183,7 @@ python benchmark.py
 
 ## To-Do
 - [ ] Code for segmentation.
-- [x ] Upload checkpoints.
+- [x] Upload checkpoints.
 
 ## Issues / Contact
 Feel free to create an issue if you get a question or just drop
