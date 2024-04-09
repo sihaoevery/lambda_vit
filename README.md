@@ -17,8 +17,17 @@
 
 Note that we use torch==1.7.1 for training. To incorparate with [ToMe](https://github.com/facebookresearch/ToMe), we use torch==1.12.1.
 
+## Checkpoints
+We provide some checkpoints for reference. Here the prefix indicates the architectures while the suffix indicates which attention layers are removed.
+- [base_01346.pth](https://drive.google.com/file/d/1kpN-yZKI2RAirD5GkG1tjyJMMyhwyZvC/view?usp=drive_link)
+- [base_013469.pth](https://drive.google.com/file/d/16MCFOl6MSpACtFZ-VnCesLPoD2051y-d/view?usp=drive_link)
+- [small_024.pth](https://drive.google.com/file/d/1hAlrazQHPmoouxll_uNCvMnYCmfdLay4/view?usp=drive_link)
+- [small_0246.pth](https://drive.google.com/file/d/1F9rggdlcILbLz5UZr4fNxw_wuOdFLu50/view?usp=drive_link)
+- [tiny_024.pth](https://drive.google.com/file/d/188xpKUKUfG-ks5jH_yiGYmczknPBCqnV/view?usp=drive_link)
+- [tiny_0246.pth](https://drive.google.com/file/d/16HgVf_MgmEGXXek8F9Y1R__wsSxZAVYb/view?usp=drive_link)
+
 ## Performance
-We provide some checkpoints for reference. We found that the same code and checkpoint would produce different inference results using different pytorch versions. We still cannot figure out and welcome discussions.
+We found that the same code and checkpoint would produce different inference results using different pytorch versions. We still cannot figure out and welcome discussions.
 <table class="tg">
 <thead>
   <tr>
